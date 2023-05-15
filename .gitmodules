@@ -1,0 +1,3 @@
+[submodule "awesome-dotfiles"]
+	path = awesome-dotfiles
+	url = https://github.com/dru26/awesome-dotfiles
