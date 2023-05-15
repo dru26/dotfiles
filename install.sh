@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# https://git-scm.com/book/en/v2/Git-Tools-Submodules
+git clone --recurse-submodules https://github.com/dru26/dotfiles.git
+
+
 sudo_msg="sudo password: "
 
 # update the system
