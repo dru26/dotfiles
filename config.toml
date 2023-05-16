@@ -1,16 +1,91 @@
+# dotfiles to add when `dotfiles update`
 [dotfiles]
 
+# move the submodules to their proper place
+[git submodules]
+awesome-dotfiles
 
+[environment]
+LV_BRANCH="release-1.3/neovim-0.9"
+XDG_DOWNLOAD_DIR="${HOME}/Downloads"
+ZSH="~/.oh-my-zsh"
+ZSH_CUSTOM="~/.oh-my-zsh/custom"
+ZDOTDIR="$HOME/.config"
+
+# install things with aura -S
 [packages]
-awesome 
+acpi
+alsa-utils				# sound utils
+awesome					# wm
+bc						# calculator
+bluez					# bluetooth manager
+bluez-utils				# bluetooth manager
+blueman					# graphical bluetooth control
+cargo					# dev
+cmatrix					# ascii art
+dex						# awesome autostart
+discord					# optional
+feh
+gcc						# dev
+gdb						# dev
+ilock3
+imagemagick
+lazygit					# dev
+luakit
+nautilus
+neofetch
+neovim					# editor
+nm-connection-editor
+npm						# dev
+node					# dev
+picom					# pretty windows
+python					# dev
+redshift				# tint screen depending on time of day
+rofi					# menu
+scrot
+spotify					# optional
+unclutter				# hide the mouse when not in use
+xbacklight
+xdg-utils
+xfce4-power-manager
+xorg-xrdb				# awesome autostart
 
+# install things with aura -A
 [aur]
+thorium-browser-bin
+vscodium
 
-
+# git clone https://github.com/{LINE}
 [git]
+zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh
+# {sh|bash} -c "$(curl -fsSL https://raw.github.com/{url})
+[install]
+sh ohmyzsh/ohmyzsh/master/tools/install.sh
+sh spicetify/spicetify-cli/master/install.sh
+bash LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh
 
- | sh
+# mkdir -p ~/{LINE}
+[directories]
+Pictures
+Trash
 
+# placed in ~/.local/share/fonts/
+[fonts]
+https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf MesloLGS
+https://github.com/stwgabriel/SF-fonts/blob/master/SFPro/TrueType/SFProDisplay-Regular.ttf SFPro
 
+# run last '''as is'''
+[extra commands]
+# install spicitify
+sudo chown $USER -R /opt/spotify
+spicetify
+spicetify backup apply enable-devtool
+spicetify update restart
+# update some defaults
+xdg-settings set default-web-browser thorium-browser.desktop
+xdg-mime default thorium-browser.desktop x-scheme-handler/http
+xdg-mime default thorium-browser.desktop x-scheme-handler/https
+# install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
