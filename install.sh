@@ -57,13 +57,13 @@ while IFS= read -r line; do
 	fi
 	# install the normal pacman packages
 	if [ $mode == 3 ]; then
-		#aura -Sq $line
-		echo $line
+		aura -Sq $line
+		#echo $line
 	fi
 	# install the AUR packages
 	if [ $mode == 4 ]; then
-		#aura -Aq $line
-		echo $line
+		aura -Aq $line
+		#echo $line
 	fi
 	# clone git repos
 	if [ $mode == 5 ]; then
