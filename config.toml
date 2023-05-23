@@ -17,9 +17,6 @@ ZDOTDIR="$HOME/.config"
 Pictures
 Trash
 
-[sys.users]
-dru wheel
-
 [sys.fonts] # placed in ~/.local/share/fonts/
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf MesloLGS
 https://github.com/stwgabriel/SF-fonts/blob/master/SFPro/TrueType/SFProDisplay-Regular.ttf SFPro
