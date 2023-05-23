@@ -3,6 +3,10 @@
 # update the system
 sudo pacman -Syu
 
+# clone the git repo
+sudo pacman -S git
+git clone --recurse-submodules git@github.com:dru26/awesome-dotfiles.git
+
 # install aura
 git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
 (cd ~/.bin/aura-bin && makepkg)

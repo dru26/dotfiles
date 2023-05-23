@@ -32,6 +32,8 @@ ilock3
 imagemagick
 lazygit					# dev
 luakit
+man-db					# docs
+man-pages				# docs
 nautilus
 neofetch
 neovim					# editor
@@ -44,6 +46,7 @@ redshift				# tint screen depending on time of day
 rofi					# menu
 scrot
 spotify					# optional
+texinfo 				# docs
 unclutter				# hide the mouse when not in use
 xbacklight
 xdg-utils
