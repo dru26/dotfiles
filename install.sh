@@ -31,15 +31,15 @@ while IFS= read -r line; do
 	
 	# check what mode we are in
 	if [[ "${line}" == \[* ]]; then
-		if [[ "${line}" == "[git submodules]" ]]; then mode=1; fi
+		if [[ "${line}" == "[dotfiles.submodules]" ]]; then mode=1; fi
 		if [[ "${line}" == "[environment]" ]]; then mode=2; fi
-		if [[ "${line}" == "[packages]" ]]; then mode=3; fi
-		if [[ "${line}" == "[aur]" ]]; then mode=4; fi
+		if [[ "${line}" == "[sys.packages]" ]]; then mode=3; fi
+		if [[ "${line}" == "[sys.aur]" ]]; then mode=4; fi
 		if [[ "${line}" == "[git]" ]]; then mode=5; fi
-		if [[ "${line}" == "[install]" ]]; then mode=6; fi
-		if [[ "${line}" == "[directories]" ]]; then mode=7; fi
-		if [[ "${line}" == "[fonts]" ]]; then mode=8; fi
-		if [[ "${line}" == "[extra commands]" ]]; then mode=9; fi
+		if [[ "${line}" == "[install.sh]" ]]; then mode=6; fi
+		if [[ "${line}" == "[sys.dir]" ]]; then mode=7; fi
+		if [[ "${line}" == "[sys.fonts]" ]]; then mode=8; fi
+		if [[ "${line}" == "[commands]" ]]; then mode=9; fi
 		continue
 	fi
 	

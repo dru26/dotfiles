@@ -1,19 +1,31 @@
-# dotfiles to add when `dotfiles update`
-[dotfiles]
+[dotfiles] # dotfiles to add when `dotfiles update`
 
-# move the submodules to their proper place
-[git submodules]
+
+[dotfiles.submodules] # move the submodules to their proper place
 awesome-dotfiles
 
-[environment]
+[sys]
+
+[sys.environment]
 LV_BRANCH="release-1.3/neovim-0.9"
 XDG_DOWNLOAD_DIR="${HOME}/Downloads"
 ZSH="~/.oh-my-zsh"
 ZSH_CUSTOM="~/.oh-my-zsh/custom"
 ZDOTDIR="$HOME/.config"
 
-# install things with aura -S
-[packages]
+[sys.dir] # mkdir -p ~/{LINE}
+Pictures
+Trash
+
+[sys.users]
+dru wheel
+
+[sys.fonts] # placed in ~/.local/share/fonts/
+https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf MesloLGS
+https://github.com/stwgabriel/SF-fonts/blob/master/SFPro/TrueType/SFProDisplay-Regular.ttf SFPro
+
+
+[sys.packages] # install things with aura -S
 acpi
 alsa-utils				# sound utils
 awesome					# wm
@@ -53,34 +65,21 @@ xdg-utils
 xfce4-power-manager
 xorg-xrdb				# awesome autostart
 
-# install things with aura -A
-[aur]
+[sys.aur] # install things with aura -A
 thorium-browser-bin
 vscodium
 
-# git clone https://github.com/{LINE}
-[git]
+[git] # git clone https://github.com/{LINE}
 zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-# {sh|bash} -c "$(curl -fsSL https://raw.github.com/{url})
-[install]
+[install.sh] # {sh|bash} -c "$(curl -fsSL https://raw.github.com/{url})
 sh ohmyzsh/ohmyzsh/master/tools/install.sh
 sh spicetify/spicetify-cli/master/install.sh
 bash LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh
 
-# mkdir -p ~/{LINE}
-[directories]
-Pictures
-Trash
 
-# placed in ~/.local/share/fonts/
-[fonts]
-https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf MesloLGS
-https://github.com/stwgabriel/SF-fonts/blob/master/SFPro/TrueType/SFProDisplay-Regular.ttf SFPro
-
-# run last '''as is'''
-[extra commands]
+[commands] # run  '''as is'''
 # install spicitify
 sudo chown $USER -R /opt/spotify
 spicetify
