@@ -4,7 +4,7 @@
 sudo pacman -Syu
 
 # make sure some needed packages is installed
-sudo pacman --needed -S fakeroot git
+sudo pacman --noconfirm --needed -S fakeroot git
 
 # clone the git repo
 git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles
@@ -13,7 +13,7 @@ git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles
 git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
 (cd ~/.bin/aura-bin && makepkg)
 aurapkg=$(ls ~/.bin/aura-bin | grep "aura-bin") 
-(cd ~/.bin/aura-bin && sudo pacman -U $aurapkg)
+(cd ~/.bin/aura-bin && sudo pacman --noconfirm -U $aurapkg)
 
 # make the font dir
 [ -d /usr/local/share/fonts ] && echo "directory /usr/.../fonts already exists!" || sudo mkdir -p /usr/local/share/fonts
@@ -63,12 +63,12 @@ while IFS= read -r line; do
 	fi
 	# install the normal pacman packages
 	if [ $mode == 3 ]; then
-		aura --needed -Sq $line
+		aura --noconfirm --needed -Sq $line
 		#echo $line
 	fi
 	# install the AUR packages
 	if [ $mode == 4 ]; then
-		aura --needed -Aq $line
+		aura --noconfirm --needed -Aq $line
 		#echo $line
 	fi
 	# clone git repos
