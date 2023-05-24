@@ -9,16 +9,20 @@ export PATH=~/.bin/.local:$PATH
 export PATH=~/.bin/.local/bin:$PATH
 
 # make sure some needed packages is installed
-sudo pacman --noconfirm --needed -S base-devel git
+sudo pacman --noconfirm --needed -S devtools base-devel git
 
 # clone the git repo
 git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles
-rm ./dotfiles/*.md
-rm ./dotfiles/.git*
+command rm ./dotfiles/*.md
+command rm ./dotfiles/.git*
 
 # install aura
+if ! foobar_loc="$(command -v aura)" || [[ -z $foobar_loc ]]; then
+  # install foobar here
+fi
 git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
-(cd ~/.bin/aura-bin && makepkg)
+(cd ~/.bin/aura-bin && extra-x86_64-build
+ && makepkg)
 aurapkg=$(ls ~/.bin/aura-bin | grep "aura-bin") 
 (cd ~/.bin/aura-bin && sudo pacman --noconfirm -U $aurapkg)
 
@@ -41,11 +45,11 @@ while IFS= read -r line; do
 	# check what mode we are in
 	if [[ "${line}" == \[* ]]; then
 		if [[ "${line}" == "[dotfiles.submodules]" ]]; then mode=1; fi
-		if [[ "${line}" == "[environment]" ]]; then mode=2; fi
+		if [[ "${line}" == "[sys.environment]" ]]; then mode=2; fi
 		if [[ "${line}" == "[sys.packages]" ]]; then mode=3; fi
 		if [[ "${line}" == "[sys.aur]" ]]; then mode=4; fi
 		if [[ "${line}" == "[git]" ]]; then mode=5; fi
-		if [[ "${line}" == "[install.sh]" ]]; then mode=6; fi
+		if [[ "${line}" == "[scripts]" ]]; then mode=6; fi
 		if [[ "${line}" == "[sys.dir]" ]]; then mode=7; fi
 		if [[ "${line}" == "[sys.fonts]" ]]; then mode=8; fi
 		if [[ "${line}" == "[commands]" ]]; then mode=9; fi
@@ -55,8 +59,8 @@ while IFS= read -r line; do
 	# copy the submodules into the proper spot for later
 	if [ $mode == 1 ]; then
 		mv ./dotfiles/$line/* ./dofiles/.dotfiles/ 
-		rm ./dotfiles/.dotfiles/*.md
-		rm ./dotfiles/.dotfiles/.git*
+		command rm ./dotfiles/.dotfiles/*.md
+		command rm ./dotfiles/.dotfiles/.git*
 		echo "moved './dotfiles/${line}/*' to './dotfiles/.dotfiles/'"
 	fi
 	# add some env variables
