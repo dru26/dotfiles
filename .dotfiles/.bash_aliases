@@ -61,7 +61,14 @@ alias vim='editor'
 alias edit='editor'
 
 # ip
-alias myip="curl http://ipecho.net/plain; echo"
+alias myip='curl http://ipecho.net/plain | echo'
 
 # update system
 alias update='sudo aura -Syu && sudo aura -Ayu'
+
+# reset system to factory defaults
+prompt () { 
+	read -e -p "Continue? [y/N]> ";
+	return $(test $REPLY = "y");
+}
+factory-default='prompt'
