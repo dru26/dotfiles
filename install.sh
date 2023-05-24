@@ -14,17 +14,16 @@ sudo pacman --noconfirm --needed -S devtools base-devel git
 # clone the git repo
 git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles
 command rm ./dotfiles/*.md
-command rm ./dotfiles/.git*
+command rm -r ./dotfiles/.git*
 
 # install aura
 if ! foobar_loc="$(command -v aura)" || [[ -z $foobar_loc ]]; then
-  # install foobar here
+	git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
+	(cd ~/.bin/aura-bin && extra-x86_64-build
+	 && makepkg)
+	aurapkg=$(ls ~/.bin/aura-bin | grep "aura-bin") 
+	(cd ~/.bin/aura-bin && sudo pacman --noconfirm -U $aurapkg)
 fi
-git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
-(cd ~/.bin/aura-bin && extra-x86_64-build
- && makepkg)
-aurapkg=$(ls ~/.bin/aura-bin | grep "aura-bin") 
-(cd ~/.bin/aura-bin && sudo pacman --noconfirm -U $aurapkg)
 
 # make the font dir
 [ -d /usr/local/share/fonts ] && echo "directory /usr/.../fonts already exists!" || sudo mkdir -p /usr/local/share/fonts
@@ -60,7 +59,7 @@ while IFS= read -r line; do
 	if [ $mode == 1 ]; then
 		mv ./dotfiles/$line/* ./dofiles/.dotfiles/ 
 		command rm ./dotfiles/.dotfiles/*.md
-		command rm ./dotfiles/.dotfiles/.git*
+		command rm -r ./dotfiles/.dotfiles/.git*
 		echo "moved './dotfiles/${line}/*' to './dotfiles/.dotfiles/'"
 	fi
 	# add some env variables
