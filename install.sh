@@ -130,6 +130,7 @@ read -p "\[\033[1\];32mFinished all commands, press Enter to finish cleaning up\
 
 # copy the dotfiles to ~/
 mv ./dotfiles/.dotfiles/* /home/$USER 
+mv ./dotfiles/.dotfiles/.[!.]* /home/$USER 
 
 # resource bashrc
 source ~/.bashrc
