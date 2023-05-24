@@ -4,7 +4,7 @@
 sudo pacman -Syu
 
 # make sure some needed packages is installed
-sudo pacman --noconfirm --needed -S fakeroot git
+sudo pacman --noconfirm --needed -S base-devel git
 
 # clone the git repo
 git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles

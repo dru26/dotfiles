@@ -37,7 +37,7 @@ discord					# optional
 feh
 gcc						# dev
 gdb						# dev
-ilock3
+i3lock
 imagemagick
 lazygit					# dev
 luakit
@@ -48,22 +48,21 @@ neofetch
 neovim					# editor
 nm-connection-editor
 npm						# dev
-node					# dev
 openssh					# ssh
 picom					# pretty windows
 python					# dev
 redshift				# tint screen depending on time of day
 rofi					# menu
 scrot
-spotify					# optional
 texinfo 				# docs
 unclutter				# hide the mouse when not in use
-xbacklight
+xorg-xbacklight
 xdg-utils
 xfce4-power-manager
 xorg-xrdb				# awesome autostart
 
 [sys.aur] # install things with aura -A
+spotify					# optional
 thorium-browser-bin
 vscodium
 
