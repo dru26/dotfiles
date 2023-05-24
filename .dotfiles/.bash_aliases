@@ -21,11 +21,8 @@ alias df="df -h"
 alias find='history | grep'
 
 # trash
-rm () {
-	cp -fr -t ~/Trash $1
-	rm -fr $1
-}
-alias trash="rm -fr ~/Trash && mkdir ~/Trash"
+alias rm="mv -nt ~/Trash"
+alias trash="rm -fr ~/Trash/*"
 
 # clear
 alias c='clear'
