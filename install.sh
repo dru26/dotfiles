@@ -109,7 +109,7 @@ while IFS= read -r line; do
 	if [ $mode == 9 ]; then
 		eval $line
 	fi
-done < "~/dotfiles/config.toml"
+done < ~/dotfiles/config.toml
 
 
 # copy the dotfiles to ~/
