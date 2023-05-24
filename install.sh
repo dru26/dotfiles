@@ -4,7 +4,7 @@
 sudo pacman -Syu
 
 # make sure some needed packages is installed
-sudo pacman --needed -S fakeroot git
+sudo pacman --needed -S fakeroot git openssh
 
 # clone the git repo
 git clone --recurse-submodules git@github.com:dru26/awesome-dotfiles.git ~/dotfiles
@@ -63,12 +63,12 @@ while IFS= read -r line; do
 	fi
 	# install the normal pacman packages
 	if [ $mode == 3 ]; then
-		aura -Sq $line
+		aura --needed -Sq $line
 		#echo $line
 	fi
 	# install the AUR packages
 	if [ $mode == 4 ]; then
-		aura -Aq $line
+		aura --needed -Aq $line
 		#echo $line
 	fi
 	# clone git repos
