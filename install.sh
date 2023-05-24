@@ -3,6 +3,11 @@
 # update the system
 sudo pacman -Syu
 
+# add some stuff to path, since we are trying to use .bin
+export PATH=~/.bin:$PATH
+export PATH=~/.bin/.local:$PATH
+export PATH=~/.bin/.local/bin:$PATH
+
 # make sure some needed packages is installed
 sudo pacman --noconfirm --needed -S base-devel git
 
