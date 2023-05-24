@@ -25,6 +25,10 @@ rm() {
 	cp -fr -t ~/Trash $1
 	rm -fr $1
 }
+trash() {
+	rm -fr ~/Trash
+	mkdir ~/Trash
+}
 
 # clear
 alias c='clear'
