@@ -52,11 +52,11 @@ while IFS= read -r line; do
 	
 	# copy the submodules into the proper spot for later
 	if [ $mode == 1 ]; then
-		dir="~/dotfiles/${line}/."
+		dir="${HOME}/dotfiles/${line}/."
 		echo "moved '${dir}' to '~/dotfiles/.dotfiles/'"
 		continue
 		
-		cp -a $dir '~/dofiles/.dotfiles/'
+		cp -a $dir '${HOME}/dofiles/.dotfiles/'
 		rm dotfiles/*.md
 		rm dotfiles/.git*
 	fi
@@ -98,7 +98,7 @@ while IFS= read -r line; do
 	fi
 	# make the directories 
 	if [ $mode == 7 ]; then
-		dir="~/${line}"
+		dir="${HOME}/${line}"
 		[ -d $dir ] && echo "directory ${dir} already exists!" || mkdir -p $dir
 	fi
 	# install fonts
@@ -118,7 +118,7 @@ done < ~/dotfiles/config.toml
 
 
 # copy the dotfiles to ~/
-cp --parents -rp ~/dotfiles/.dotfiles/. $HOME
+cp -rp ~/dotfiles/.dotfiles/. $HOME
 
 # resource bashrc
 source ~/.bashrc
