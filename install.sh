@@ -124,7 +124,7 @@ done < ~/dotfiles/config.toml
 
 
 # copy the dotfiles to ~/
-cp -rp $HOME/dotfiles/.dotfiles/. $HOME
+cp -rp ~/dotfiles/.dotfiles/. /home/$USER
 
 # resource bashrc
 source ~/.bashrc
