@@ -52,11 +52,11 @@ while IFS= read -r line; do
 	
 	# copy the submodules into the proper spot for later
 	if [ $mode == 1 ]; then
-		dir="${HOME}/dotfiles/${line}/."
+		dir=$HOME/dotfiles/${line}/.
 		echo "moved '${dir}' to '~/dotfiles/.dotfiles/'"
 		continue
 		
-		cp -a $dir '${HOME}/dofiles/.dotfiles/'
+		cp -a $dir $HOME/dofiles/.dotfiles/
 		rm dotfiles/*.md
 		rm dotfiles/.git*
 	fi
@@ -124,7 +124,7 @@ done < ~/dotfiles/config.toml
 
 
 # copy the dotfiles to ~/
-cp -rp $HOME/dotfiles/.dotfiles/ $HOME
+cp -rp $HOME/dotfiles/.dotfiles/. $HOME
 
 # resource bashrc
 source ~/.bashrc
