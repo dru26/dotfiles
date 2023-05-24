@@ -51,6 +51,7 @@ while IFS= read -r line; do
 		if [[ "${line}" == "[sys.dir]" ]]; then mode=7; fi
 		if [[ "${line}" == "[sys.fonts]" ]]; then mode=8; fi
 		if [[ "${line}" == "[commands]" ]]; then mode=9; fi
+		read -p "Press Enter to continue" </dev/tty
 		continue
 	fi
 	
