@@ -19,8 +19,7 @@ command rm -r ./dotfiles/.git*
 # install aura
 if ! foobar_loc="$(command -v aura)" || [[ -z $foobar_loc ]]; then
 	git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
-	(cd ~/.bin/aura-bin && extra-x86_64-build
-	 && makepkg)
+	(cd ~/.bin/aura-bin && extra-x86_64-build && makepkg)
 	aurapkg=$(ls ~/.bin/aura-bin | grep "aura-bin") 
 	(cd ~/.bin/aura-bin && sudo pacman --noconfirm -U $aurapkg)
 fi
