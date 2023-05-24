@@ -3,9 +3,11 @@
 # update the system
 sudo pacman -Syu
 
+# make sure some needed packages is installed
+sudo pacman --needed -S fakeroot git ssh
+
 # clone the git repo
-sudo pacman -S git
-git clone --recurse-submodules git@github.com:dru26/awesome-dotfiles.git
+git clone --recurse-submodules git@github.com:dru26/awesome-dotfiles.git ~/.dotfiles
 
 # install aura
 git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
@@ -107,7 +109,7 @@ while IFS= read -r line; do
 	if [ $mode == 9 ]; then
 		eval $line
 	fi
-done < "config.toml"
+done < "~/.dotfiles/config.toml"
 
 
 # copy the dotfiles to ~/
