@@ -71,4 +71,4 @@ prompt () {
 	read -e -p "Continue? [y/N]> ";
 	return $(test $REPLY = "y");
 }
-factory-default='prompt'
+alias factory-default='prompt'
