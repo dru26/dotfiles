@@ -68,12 +68,18 @@ while IFS= read -r line; do
 	fi
 	# install the normal pacman packages
 	if [ $mode == 3 ]; then
+		old_home=$HOME
+		export HOME="${HOME}/.bin"
 		sudo aura --noconfirm --needed -Sq $line
+		export HOME="${old_home}"
 		#echo $line
 	fi
 	# install the AUR packages
 	if [ $mode == 4 ]; then
+		old_home=$HOME
+		export HOME="${HOME}/.bin"
 		sudo aura --noconfirm --needed -Aq $line
+		export HOME="${old_home}"
 		#echo $line
 	fi
 	# clone git repos
@@ -118,7 +124,7 @@ done < ~/dotfiles/config.toml
 
 
 # copy the dotfiles to ~/
-cp -rp ~/dotfiles/.dotfiles/. $HOME
+cp -rp $HOME/dotfiles/.dotfiles/ $HOME
 
 # resource bashrc
 source ~/.bashrc

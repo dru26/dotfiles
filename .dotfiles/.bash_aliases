@@ -1,9 +1,9 @@
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ls='ls -F'
-alias lr='ls -t -1'
+alias ll='ls -alF --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
+alias ls='ls -F --color=auto'
+alias lr='ls -t -1 --color=auto'
 
 # update the dotfiles
 alias dofiles-update=''
