@@ -63,12 +63,12 @@ while IFS= read -r line; do
 	fi
 	# install the normal pacman packages
 	if [ $mode == 3 ]; then
-		aura --noconfirm --needed -Sq $line
+		sudo aura --noconfirm --needed -Sq $line
 		#echo $line
 	fi
 	# install the AUR packages
 	if [ $mode == 4 ]; then
-		aura --noconfirm --needed -Aq $line
+		sudo aura --noconfirm --needed -Aq $line
 		#echo $line
 	fi
 	# clone git repos
