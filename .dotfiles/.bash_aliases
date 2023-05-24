@@ -21,7 +21,10 @@ alias df="df -h"
 alias find='history | grep'
 
 # trash
-alias rm='mv --force -t ~/Trash'
+rm() {
+	cp -fr -t ~/Trash $1
+	rm -fr $1
+}
 
 # clear
 alias c='clear'
@@ -50,8 +53,8 @@ alias root='sudo -i'
 alias keys='xmodmap -pke'
 
 # power commands
-alias reboot='sudo reboot -r now'
-alias shutdown='sudo shutdown -r now'
+alias reboot='sudo reboot now'
+alias shutdown='sudo shutdown now'
 
 # neovim is supreme
 alias editor='neovim'
