@@ -29,6 +29,8 @@ fi
 [ -d /usr/local/share/fonts/otf ] && echo "directory /usr/.../fonts/otf already exists!" || sudo mkdir -p /usr/local/share/fonts/otf
 [ -d /usr/local/share/fonts/ttf ] && echo "directory /usr/.../fonts/ttf already exists!" || sudo mkdir -p /usr/local/share/fonts/ttf
 
+read -p "\[\033[1\];32mFinished setting up, press Enter to continue\[\033[0m\]" </dev/tty
+
 # read the toml config and execute its instructions
 line=""
 mode=0
@@ -51,7 +53,7 @@ while IFS= read -r line; do
 		if [[ "${line}" == "[sys.dir]" ]]; then mode=7; fi
 		if [[ "${line}" == "[sys.fonts]" ]]; then mode=8; fi
 		if [[ "${line}" == "[commands]" ]]; then mode=9; fi
-		read -p "\[\033[1\];32mPress Enter to continue\[\033[0m\]" </dev/tty
+		read -p "\[\033[1\];32mFinished running ${line}, press Enter to continue\[\033[0m\]" </dev/tty
 		continue
 	fi
 	
