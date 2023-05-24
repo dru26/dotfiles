@@ -60,6 +60,7 @@ xorg-xbacklight
 xdg-utils
 xfce4-power-manager
 xorg-xrdb				# awesome autostart
+zsh
 
 [sys.aur] # install things with aura -A
 spotify					# optional
@@ -74,7 +75,6 @@ zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlig
 sh ohmyzsh/ohmyzsh/master/tools/install.sh
 sh spicetify/spicetify-cli/master/install.sh
 bash LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh
-
 
 [commands] # run  '''as is'''
 # install spicitify
