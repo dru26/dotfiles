@@ -51,7 +51,7 @@ while IFS= read -r line; do
 		if [[ "${line}" == "[sys.dir]" ]]; then mode=7; fi
 		if [[ "${line}" == "[sys.fonts]" ]]; then mode=8; fi
 		if [[ "${line}" == "[commands]" ]]; then mode=9; fi
-		read -p "\033[1;32mPress Enter to continue\033[0m" </dev/tty
+		read -p "\[\033[1\];32mPress Enter to continue\[\033[0m\]" </dev/tty
 		continue
 	fi
 	
