@@ -57,7 +57,7 @@ while IFS= read -r line; do
 	
 	# copy the submodules into the proper spot for later
 	if [ $mode == 1 ]; then
-		mv ./dotfiles/$line/* ./dofiles/.dotfiles/ 
+		mv ./dotfiles/$line/* ./dotfiles/.dotfiles/ 
 		command rm ./dotfiles/.dotfiles/*.md
 		command rm -r ./dotfiles/.dotfiles/.git*
 		echo "moved './dotfiles/${line}/*' to './dotfiles/.dotfiles/'"
