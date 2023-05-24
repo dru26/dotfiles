@@ -29,7 +29,7 @@ fi
 [ -d /usr/local/share/fonts/otf ] && echo "directory /usr/.../fonts/otf already exists!" || sudo mkdir -p /usr/local/share/fonts/otf
 [ -d /usr/local/share/fonts/ttf ] && echo "directory /usr/.../fonts/ttf already exists!" || sudo mkdir -p /usr/local/share/fonts/ttf
 
-read -p '^[[1;32mFinished setting up, press Enter to start^[[0m' </dev/tty
+read -p $'\e[1;32mFinished setting up, press Enter to start\e[0m' </dev/tty
 
 # read the toml config and execute its instructions
 line=""
@@ -53,7 +53,7 @@ while IFS= read -r line; do
 		if [[ "${line}" == "[sys.dir]" ]]; then mode=7; fi
 		if [[ "${line}" == "[sys.fonts]" ]]; then mode=8; fi
 		if [[ "${line}" == "[commands]" ]]; then mode=9; fi
-		read -p '^[[1;32mFinished running ${line}, press Enter to continue^[[0m' </dev/tty
+		read -p $'\e[1;32mFinished running ${line}, press Enter to continue\e[0m' </dev/tty
 		continue
 	fi
 	
@@ -126,7 +126,7 @@ while IFS= read -r line; do
 	fi
 done < ./dotfiles/config.toml
 
-read -p '^[[1;32mFinished all commands, press Enter to finish cleaning up^[[0m' </dev/tty
+read -p $'\e[1;32mFinished all commands, press Enter to finish cleaning up\e[0m' </dev/tty
 
 # copy the dotfiles to ~/
 mv ./dotfiles/.dotfiles/* /home/$USER 
