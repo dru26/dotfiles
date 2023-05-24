@@ -49,6 +49,7 @@ neovim					# editor
 nm-connection-editor
 npm						# dev
 node					# dev
+openssh					# ssh
 picom					# pretty windows
 python					# dev
 redshift				# tint screen depending on time of day

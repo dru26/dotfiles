@@ -4,16 +4,16 @@
 sudo pacman -Syu
 
 # make sure some needed packages is installed
-sudo pacman --needed -S fakeroot git openssh
+sudo pacman --needed -S fakeroot git
 
 # clone the git repo
-git clone --recurse-submodules git@github.com:dru26/awesome-dotfiles.git ~/dotfiles
+git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles
 
 # install aura
 git clone https://aur.archlinux.org/aura-bin.git ~/.bin/aura-bin
 (cd ~/.bin/aura-bin && makepkg)
 aurapkg=$(ls ~/.bin/aura-bin | grep "aura-bin") 
-(cd ~/.bin/aura-bin && sudo pacman -Uq $aurapkg)
+(cd ~/.bin/aura-bin && sudo pacman -U $aurapkg)
 
 # make the font dir
 [ -d /usr/local/share/fonts ] && echo "directory /usr/.../fonts already exists!" || sudo mkdir -p /usr/local/share/fonts
