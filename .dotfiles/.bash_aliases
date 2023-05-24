@@ -21,14 +21,11 @@ alias df="df -h"
 alias find='history | grep'
 
 # trash
-rm() {
+rm () {
 	cp -fr -t ~/Trash $1
 	rm -fr $1
 }
-trash() {
-	rm -fr ~/Trash
-	mkdir ~/Trash
-}
+alias trash="rm -fr ~/Trash && mkdir ~/Trash"
 
 # clear
 alias c='clear'
@@ -66,8 +63,8 @@ alias vi='editor'
 alias vim='editor'
 alias edit='editor'
 
-# ip tables
-alias ipt='sudo /sbin/iptables'
+# ip
+alias myip="curl http://ipecho.net/plain; echo"
 
 # update system
-alias update='sudo aura -Syu; sudo aura -Ayu'
+alias update='sudo aura -Syu && sudo aura -Ayu'

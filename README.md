@@ -20,7 +20,7 @@ Also, make a user using `useradd -m -G wheel username && passwd username` then u
 We first install git, download the install file, and install:
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/dru26/dotfiles/main/install.sh)" && . install.sh && rm install.sh
+curl -fsSLO https://raw.githubusercontent.com/dru26/dotfiles/main/install.sh && . install.sh && rm install.sh
 ```
 
 
