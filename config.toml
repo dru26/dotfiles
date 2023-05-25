@@ -10,8 +10,8 @@ curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | gpg -
 [sys.environment]
 LV_BRANCH="release-1.3/neovim-0.9"
 XDG_DOWNLOAD_DIR="${HOME}/Downloads"
-ZSH="~/.oh-my-zsh"
-ZSH_CUSTOM="~/.oh-my-zsh/custom"
+ZSH="~/.bin/.oh-my-zsh"
+ZSH_CUSTOM="~/.bin/.oh-my-zsh/custom"
 ZDOTDIR="$HOME/.config"
 
 [sys.dir] # mkdir -p ~/{LINE}
@@ -29,6 +29,8 @@ acpi
 alsa-utils				# sound utils
 awesome					# wm
 bc						# calculator
+
+alacritty				# terminal
 
 bluez					# bluetooth manager
 bluez-utils				# bluetooth manager
@@ -85,8 +87,8 @@ thorium-browser-bin
 vscodium
 
 [git] # git clone https://github.com/{LINE}
-zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions ~/.bin/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting ~/.bin/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 [scripts] # {sh|bash} -c "$(curl -fsSL https://raw.github.com/{url})
 sh ohmyzsh/ohmyzsh/master/tools/install.sh
