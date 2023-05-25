@@ -132,7 +132,7 @@ read -p $'\e[1;32mFinished all commands, press Enter to finish cleaning up\e[0m'
 
 # copy the dotfiles to ~/
 mv -i ./dotfiles/.dotfiles/* /home/$USER 
-mv -i ./dotfiles/.dotfiles/.[!.]* /home/$USER 
+rsync -ru ./dotfiles/.dotfiles/.[!.]* /home/$USER 
 
 # remove the remaining files
 command rm -r ./dotfiles
