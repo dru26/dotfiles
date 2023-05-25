@@ -130,8 +130,8 @@ done < ./dotfiles/config.toml
 read -p $'\e[1;32mFinished all commands, press Enter to finish cleaning up\e[0m' </dev/tty
 
 # copy the dotfiles to ~/
-mv ./dotfiles/.dotfiles/* /home/$USER 
-mv ./dotfiles/.dotfiles/.[!.]* /home/$USER 
+mv -i ./dotfiles/.dotfiles/* /home/$USER 
+mv -i ./dotfiles/.dotfiles/.[!.]* /home/$USER 
 
 # remove the remaining files
 command rm -r ./dotfiles

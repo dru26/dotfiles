@@ -56,8 +56,6 @@ alias shutdown='sudo shutdown now'
 
 # neovim is supreme
 alias editor='neovim'
-alias vi='editor'
-alias vim='editor'
 alias edit='editor'
 
 # ip
