@@ -29,40 +29,55 @@ acpi
 alsa-utils				# sound utils
 awesome					# wm
 bc						# calculator
+
 bluez					# bluetooth manager
 bluez-utils				# bluetooth manager
 blueman					# graphical bluetooth control
+
 cargo					# dev
 cmatrix					# ascii art
 dex						# awesome autostart
 discord					# optional
 feh
+
 gcc						# dev
 gdb						# dev
-i3lock
-imagemagick
 lazygit					# dev
-luakit
+npm						# dev
+python					# dev
+
 man-db					# docs
 man-pages				# docs
+texinfo 				# docs
+
+i3lock
+imagemagick
+luakit
 nautilus
 neofetch
 neovim					# editor
 nm-connection-editor
-npm						# dev
 openssh					# ssh
 picom					# pretty windows
-python					# dev
 redshift				# tint screen depending on time of day
 rofi					# menu
 scrot
-texinfo 				# docs
 unclutter				# hide the mouse when not in use
 xorg-xbacklight
 xdg-utils
-xfce4-power-manager
-xorg-xrdb				# awesome autostart
+
 zsh
+
+mesa					# nvidia specific driver
+lib32-mesa				# nvidia specific driver
+xf86-video-nouveau		# nvidia specific driver
+
+xfce4-power-manager
+
+xorg-xinit				# wm autostart
+xorg-xrdb				# awesome autostart
+xorg-server				# wm
+
 
 [sys.aur] # install things with aura -A
 spotify					# optional

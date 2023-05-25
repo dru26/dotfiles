@@ -133,5 +133,9 @@ read -p $'\e[1;32mFinished all commands, press Enter to finish cleaning up\e[0m'
 mv ./dotfiles/.dotfiles/* /home/$USER 
 mv ./dotfiles/.dotfiles/.[!.]* /home/$USER 
 
+# remove the remaining files
+command rm -r ./dotfiles
+command rm ./install.sh
+
 # resource bashrc
 source ~/.bashrc

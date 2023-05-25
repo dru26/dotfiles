@@ -66,6 +66,9 @@ alias myip='curl http://ipecho.net/plain | echo'
 # update system
 alias update='sudo aura -Syu && sudo aura -Ayu'
 
+# alias aura
+alias aura='sudo aura'
+
 # reset system to factory defaults
 prompt () { 
 	read -e -p "Continue? [y/N]> ";
