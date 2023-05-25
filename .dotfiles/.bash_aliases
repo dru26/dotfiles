@@ -22,7 +22,7 @@ alias find='history | grep'
 
 # trash
 alias rm="mv -nt ~/Trash"
-alias trash="rm -fr ~/Trash/*"
+alias trash="command rm -fr ~/Trash/*"
 
 # clear
 alias c='clear'
