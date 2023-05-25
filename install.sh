@@ -12,9 +12,10 @@ export PATH=~/.bin/.local/bin:$PATH
 sudo pacman --noconfirm --needed -S devtools base-devel git
 
 # clone the git repo
+command rm -r --interactive=never ./dotfiles
 git clone --recurse-submodules https://github.com/dru26/dotfiles.git ~/dotfiles
 command rm ./dotfiles/*.md
-command rm -r ./dotfiles/.git*
+command rm -r --interactive=never ./dotfiles/.git*
 
 # install aura
 if ! foobar_loc="$(command -v aura)" || [[ -z $foobar_loc ]]; then
