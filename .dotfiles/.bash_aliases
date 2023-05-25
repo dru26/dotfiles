@@ -71,4 +71,4 @@ prompt () {
 	read -e -p "Continue? [y/N]> ";
 	return $(test $REPLY = "y");
 }
-alias factory-default='prompt'
+alias factory-default='prompt && { pacman -D --asdeps $(pacman -Qqe) && pacman -D --asexplicit base linux linux-firmware && # pacman -Qtdq | pacman -Rns - && pacman -Qqd | pacman -Rsu --print -}'
