@@ -32,6 +32,10 @@ bc						# calculator
 
 alacritty				# terminal
 
+keepassxc				# password manager
+
+firefox					# default browser
+
 bluez					# bluetooth manager
 bluez-utils				# bluetooth manager
 blueman					# graphical bluetooth control
@@ -71,7 +75,6 @@ xdg-utils
 zsh
 
 mesa					# nvidia specific driver
-lib32-mesa				# nvidia specific driver
 xf86-video-nouveau		# nvidia specific driver
 
 xfce4-power-manager
@@ -79,6 +82,7 @@ xfce4-power-manager
 xorg-xinit				# wm autostart
 xorg-xrdb				# awesome autostart
 xorg-server				# wm
+xorg-xrandr				# multimonitor support
 
 
 [sys.aur] # install things with aura -A
