@@ -7,6 +7,7 @@ sudo
 vi
 ```
 
+
 Make sure to enable the network (`systemctl enable systemd-networkd.service`) and add the following line to `/etc/resolv.conf`
 
 ```
